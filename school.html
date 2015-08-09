@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	    <title>School Members</title>
+	    <link href="css/school-member.css" rel="stylesheet" />
+	</head>
+	<body>
+		<header>School Members</header>
+		
+		<div id='main-container'>
+			<div class='tabs' data-bind="foreach: tabs">
+				<a data-bind="text: tabName, click: $parent.switchTab, css: actClass, attr:{id: tabId}" class="tab"></a>
+			</div>
+			
+			<div class='tables' data-bind="foreach: tabs">
+				<table data-bind="css: actClass, attr:{id: tableId}" class='table'></table>
+			</div>
+		</div>
+
+		<footer>&copy; Oracle. Milley Shu. 2015-07-28</footer>
+
+		<script id="table-tmpl">
+			<thead>
+				<tr></tr>
+			</thead>
+			<tbody data-bind="foreach: students">
+				<tr>
+					<td data-bind="text: id"></td>
+					<td data-bind="text: name"></td>
+					<td data-bind="text: gender"></td>
+					<td data-bind="text: age"></td>
+					<td data-bind="text: grade"></td>
+				</tr>
+			</tbody>
+		</script>
+
+		<script data-main="js/school-member.js" src="js/require.js"></script>
+	</body>
+</html>

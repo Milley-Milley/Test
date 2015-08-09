@@ -1,0 +1,256 @@
+*{
+	font-family: "Arial", "微软雅黑";
+}
+
+hr{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-top: 1px solid #eee;
+	clear: both;
+}
+
+p{
+	font-weight: bold;
+}
+
+input{
+	padding: 3px 5px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	height: 24px;
+}
+
+textarea{
+	border-color: #ddd;
+	border-radius: 4px;
+	padding: 10px;
+}
+
+button{
+	border-radius: 4px;
+	border: 1px solid #3195BF;
+	background-color: #29A0D2;
+	color: #fff;
+	padding: 4px 8px;
+}
+
+table{
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+	margin: 10px auto;
+	width: 50%;
+}
+
+table > caption{
+	padding: 10px;
+	font-weight: bold;
+}
+
+table > thead > tr > th{
+	padding: 6px;
+	border-bottom: 1px solid #ccc;
+	background-color: #e3e3e3;
+	height: 1.5em;
+}
+table > thead > tr > th + th{
+	border-left: 1px solid #ccc;
+}
+table > tbody > tr:hover{
+	background-color: #f6f6f6;
+}
+table > tbody > tr > td{
+	padding: 8px;
+	padding-right: 16px;
+	border-bottom: 1px solid #ccc;
+}
+table > tbody > tr > td + td{
+	border-left: 1px solid #ccc;
+}
+table > tbody > tr > td.operation{
+	text-align: center;
+	padding-right: 8px;
+}
+
+table > tbody > tr > td > span:nth-child(even){
+	width: 100%;
+}
+
+table > tbody > tr > td input{
+	font-size: 15px;
+	width: 100%;
+}
+
+form{
+	display: inline-block;
+	width: 24%;
+	border: 2px solid #E2F7FF;
+	border-radius: 6px;
+	margin-top: 30px;
+	margin-right: 20px;
+	position: relative;
+	top: 18px;
+}
+fieldset{
+	padding-top: 15px;
+	padding-bottom: 0;
+	border: 0;
+}
+form div.form-group{
+	margin-bottom: 10px;
+}
+form div.form-group label{
+	display: inline-block;
+	text-align: right;
+	padding-right: 5%;
+	width: 20%;
+}
+
+form, table#t-knockout{
+	float: left;
+}
+
+textarea + button{
+	position: relative;
+	bottom: 6px;
+}
+
+div#css-binding{
+	padding: 10px;
+}
+div#css-binding.pink{
+	background-color: #FFE2EE;
+	border: 0;
+}
+div#css-binding.blue{
+	background-color: #E2F7FF;
+	border: 0;
+}
+div#css-binding.gray{
+	background-color: #f1f1f1;
+	border: 0;
+}
+div#css-binding.white{
+	background-color: #fff;
+	border: 1px solid #eee;
+}
+
+
+/* ******* .S-ITEM BEGIN ****** */
+.s-item{
+	float: left;
+	padding: 15px;
+	background-color: #f1f1f1;
+	border-radius: 6px;
+	margin-right: 10px;
+	border: 1px solid #ececec;
+}
+.s-item > label{
+	border-bottom: 1px solid #f6f6f6;
+	display: block;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+.s-item img{
+	height: 120px;
+	border: 1px solid #eee;
+	border-radius: 6px;
+}
+.s-item img:hover{
+	cursor: pointer;
+}
+.s-item p{
+	font-weight: 100;
+}
+.s-item p:hover{
+	color: #3496BF;
+	cursor: pointer;
+}
+.s-item .top-part .face-part{
+	float: left;
+}
+.s-item .top-part .detail-part{
+	float: right;
+	padding-left: 10px;
+	border-left: 1px solid #f6f6f6;
+	margin-left: 10px;
+	height: 120px;
+}
+.s-item .bottom-part{
+	margin-top: 145px;
+}
+.s-item .bottom-part p{
+	border-top: 1px solid #f6f6f6;
+	margin-bottom: 5px;
+	padding-top: 5px;
+}
+/* ******* .S-ITEM END ****** */
+
+/* ******* .MODAL BEGIN ****** */
+.modal, .modal-helper{
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: auto;
+	z-index: 100;
+}
+.modal-helper{
+	background-color: #000;
+	opacity: 0.7;
+	z-index: 99;
+}
+.modal > .modal-main{
+	width: 800px;
+	margin: 0 auto;
+	margin-top: 100px;
+	padding: 15px;
+	background-color: #fff;
+	border-radius: 6px;
+	border: 1px solid #aaa;
+	z-index: 10;
+	position: relative;
+}
+.modal > .modal-main > img{
+	width: 800px;
+}
+a.close-modal{
+	padding: 10px;
+	position: absolute;
+	top: 25px;
+	right: 25px;
+	border-radius: 4px;
+	background-color: #eee;
+	opacity: 0.5;
+	color: #555;
+}
+a.close-modal:hover{
+	cursor: pointer;
+	opacity: 0.6;
+}
+/* ******* .MODAL BEGIN ****** */
+
+#component_1{
+	overflow: hidden;
+}
+
+#help-link-part{
+	margin-top: 20px;
+}
+
+.help-link{
+	padding-left: 20px;
+	background-repeat: no-repeat;
+	background-image: url("../img/func_help_16_act.png");
+	color: #0572CE;
+}
+.help-link.visited{
+    background-image: url("../img/func_help_16_ena.png");
+    color: #878C90;
+}
+.help-link:hover{
+    background-image: url("../img/func_help_16_hov.png");
+    color: #85BBE7;
+}

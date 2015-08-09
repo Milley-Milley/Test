@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>Knockout Exercise</title>
+        <link href="css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <form>
+            <fieldset data-bind="with: newPeople">
+                <div class='form-group'>
+                    <label>No</label> <input type="text" data-bind="textInput: no" name="no" />
+                </div>
+                <div class='form-group'>
+                    <label>Name</label> <input type="text" data-bind="textInput: name" name="name" />
+                </div>
+                <div class='form-group'>
+                    <label>Age</label> <input type="text" data-bind="textInput: age" name="age" />
+                </div>
+                <div class='form-group'>
+                    <label>Hobby</label> <input type="text" data-bind="textInput: hobby" name="hobby" />
+                </div>
+            </fieldset>
+            <div class='form-group'>
+                <button data-bind="click: addStudent" style="margin-left: 28%">Add Student</button>
+            </div>
+        </form>
+
+        <table id="t-knockout">
+            <caption>Using KnockoutJS</caption>
+            <thead>
+                <tr><th style="width: 15%">ID No</th><th style="width: 16%">Name</th><th style="width: 10%">Age</th><th style="width: 40%">Hobby</th><th></th></tr>
+            </thead>
+            <tbody data-bind="foreach: people">
+                <tr>
+                    <td><span data-bind="text: no"></span></td>
+                    <td><span data-bind="text: name, visible: showField"></span>
+                        <span><input type='text' data-bind="textInput: name, visible: editField" /></span></td>
+                    <td><span data-bind="text: age, style: {color: parseInt(age)<20? '#24AD55':'black'}, visible: showField"></span>
+                        <span><input type='text' data-bind="textInput: age, visible: editField" /></span></td>
+                    <td><span data-bind="text: hobby, visible: showField"></span>
+                        <span><input type='text' data-bind="textInput: hobby, visible: editField" /></span></td>
+                    <td class='operation'>
+                        <span><button data-bind="click: $parent.triggerEdit, visible: showField">Edit</button></span>
+                        <span><button data-bind="click: $parent.triggerRemove, visible: showField">Remove</button></span>
+                        <span><button data-bind="click: $parent.triggerCancel, visible: editField">Cancel</button></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <div>
+            <p>HTML binding & Visible <button data-bind="click: toggle">Toggle</button></p>
+            <textarea data-bind="textInput: htmlDetails" rows="6" cols="80"></textarea>
+            <div data-bind="html: htmlDetails, visible: display"></div>
+        </div>
+
+        <hr>
+
+        <div id="css-binding" data-bind="css: bgColor, style: {height: height}">
+            <p>CSS binding</p>
+            <button data-bind="click: turnToPink">Pink</button>
+            <button data-bind="click: turnToBlue">Blue</button>
+            <button data-bind="click: turnToGray">Gray</button>
+            <button data-bind="click: turnToWhite">White</button>
+            <button data-bind="click: heightAdd">+ Height</button>
+            <button data-bind="click: heightSub">- Height</button>
+        </div>
+
+        <hr>
+
+        <!--  终于有些感受了，component应该就是用在对象中的对象中 -->
+        <div id="component_1">
+            <p>Component</p>
+            <div data-bind="foreach: people_c">
+                <div class='s-item'>
+                    <label data-bind="text: no"></label>
+                    <student-item params="value: details"></student-item>
+                </div>
+            </div>  
+
+            <div data-bind="visible: modalVisible" style="display: none;">
+                <div class='modal-helper'></div>
+                <div class="modal">
+                    <div class='modal-main'>
+                        <img data-bind="attr: {src: curSrc}">
+                        <a data-bind="click: closeFace" class="close-modal">Close</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="help-link-part">
+            <a data-bind="text: sourceLinkTitle, css: sourceLinkClass, click: sourceLinkVisit" target="_blank" class='help-link'></a>
+        </div>
+        <!-- <hr>
+        <table id="t-jsrender">
+            <caption>Using JSRender</caption>
+            <thead>
+                <tr><th>ID No</th><th>Name</th><th>Age</th><th>Hobby</th><th></th></tr>
+            </thead>
+            <tbody></tbody>
+        </table> -->
+
+        <script data-main="js/main" src="js/require.js"></script>
+
+        <!-- <script id="student-tmpl" type="text/x-jsrender">
+            <tr>
+                <td><span class='show-field'>{{:name}}</span> <span class='edit-field'><input type='text' name='name' value={{:name}}></span></td>
+                <td><span class='show-field'>{{:age}}</span> <span class='edit-field'><input type='text' name='age' value={{:age}}></span></td>
+                <td><span class='show-field'>{{:hobby}}</span> <span class='edit-field'><input type='text' name='hobby' value={{:hobby}}></span></td>
+                <td class='operation'>
+                    <span class='show-field'><button class="edit">Edit</button></span>
+                    <span class='edit-field'><button class="cancel">Cancel</button></span>
+                </td>
+            </tr>
+        </script> -->
+    </body>
+</html>

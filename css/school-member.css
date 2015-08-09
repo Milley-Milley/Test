@@ -1,0 +1,61 @@
+*{
+	font-family: "Arial", "微软雅黑";
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-color: #f4f4f4;
+}
+
+header, div#main-container, footer{
+	padding: 15px 160px;
+}
+
+header{
+	background-color: #eee;
+	border-bottom: 1px solid #ddd;
+	color: #666;
+    font-weight: bold;
+    font-size: 21px;
+}
+
+div#main-container{
+	margin: 10px 145px;
+	background-color: #fff;
+	padding: 25px 15px 15px;
+}
+
+.tabs > .tab{
+	border: 0;
+	border-bottom: 1px solid #ccc;
+	padding: 8px 15px;
+	background-color: #fff;
+}
+.tabs > .tab:hover{
+	cursor: pointer;
+	color: #0572CE;
+	text-decoration: underline;
+}
+.tabs > .tab.active{
+	border: 1px solid #ccc;
+	border-top: 3px solid #0572CE;
+	border-bottom: 1px solid #fff;
+}
+
+.tables{
+	border: 1px solid #ccc;
+	margin-top: 7px;
+	padding: 15px;
+}
+.tables .table{
+	display: none;
+}
+.tables .table.active{
+	display: block;
+}
+
+footer{
+	border-top: 1px solid #ddd;
+	color: #888;
+}
