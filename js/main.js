@@ -20,6 +20,8 @@ requirejs.config({
 
 require(["jquery", "jqueryform", "jsrender", "knockout", "util"], function($, _form, _re, ko, util){
 //**** KnockoutJS BEGIN *****************************************************************************************************
+	alert("change in conflict");
+
 	var students_ko = [{
 		no: "10112510105",
 		name: "Milk", 
